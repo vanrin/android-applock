@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">AppLock</string>
+    <string name="accessibility_description">Detects when a locked app comes to the foreground and shows the biometric lock screen. Uses window-change events only; it never reads screen content.</string>
+
+    <!-- Lock screen -->
+    <string name="locked_message">%1$s is locked</string>
+    <string name="auth_subtitle">Unlock with fingerprint or device PIN</string>
+    <string name="unlock">Unlock</string>
+
+    <!-- Self lock -->
+    <string name="self_lock_subtitle">Authenticate to open AppLock</string>
+    <string name="gate_title">AppLock is locked</string>
+
+    <!-- Main -->
+    <string name="search_hint">Search apps…</string>
+    <string name="locked_count">%1$d apps locked</string>
+    <string name="settings">Settings</string>
+    <string name="status_service_on">Protection service: on</string>
+    <string name="status_service_off">Protection service: OFF</string>
+    <string name="status_overlay_on">Display over apps: allowed</string>
+    <string name="status_overlay_off">Display over apps: NOT allowed</string>
+    <string name="fix">Fix</string>
+    <string name="protection_incomplete">Protection is not active until both items above are enabled.</string>
+
+    <!-- Settings -->
+    <string name="relock_title">Re-lock apps</string>
+    <string name="relock_immediate">Immediately when I leave the app</string>
+    <string name="relock_screen_off">When the screen turns off</string>
+    <string name="relock_timeout">After a timeout</string>
+    <string name="timeout_minutes_hint">Minutes</string>
+    <string name="autolock_title">Lock new apps automatically</string>
+    <string name="autolock_summary">Every newly installed app is locked until you approve it with your fingerprint — like iPhone install approval.</string>
+    <string name="lock_settings_title">Lock the Settings app</string>
+    <string name="lock_settings_summary">Stops anyone from disabling AppLock’s accessibility service or uninstalling it from Settings.</string>
+    <string name="admin_title">Uninstall protection</string>
+    <string name="admin_explanation">Being a device admin blocks uninstalling AppLock until you deactivate it here.</string>
+    <string name="admin_enable">Enable device admin</string>
+    <string name="admin_disable">Disable device admin</string>
+    <string name="admin_on">Device admin: active — AppLock cannot be uninstalled</string>
+    <string name="admin_off">Device admin: off</string>
+    <string name="admin_disable_warning">Disabling this allows AppLock to be uninstalled, removing all app locks.</string>
+    <string name="battery_title">Battery</string>
+    <string name="battery_info">AppLock is fully event-driven: no polling, no background timers, no foreground service, and it never reads screen content. Its battery use is effectively zero on stock Android.</string>
+    <string name="battery_exempt_off">Some brands (Xiaomi, Huawei, Oppo…) kill background services anyway. If protection stops working, exempt AppLock from battery optimization — this does not increase its power use.</string>
+    <string name="battery_exempt_on">Battery optimization exemption: granted</string>
+    <string name="battery_exempt_button">Exempt from battery optimization</string>
+
+    <!-- Notifications -->
+    <string name="channel_new_app">New app locked</string>
+    <string name="new_app_locked_title">New app locked</string>
+    <string name="new_app_locked_text">%1$s was just installed and has been locked. Unlock it with your fingerprint the first time you open it.</string>
+</resources>
