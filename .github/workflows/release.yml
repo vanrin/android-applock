@@ -29,14 +29,19 @@ jobs:
       # real key; without them the APK is debug-signed (still installable).
       #   KEYSTORE_B64      base64 of the .jks/.keystore file
       #   KEYSTORE_PASSWORD, KEY_ALIAS, KEY_PASSWORD
+      # (secrets are not readable in step `if:` conditions, so the check lives
+      # in the shell.)
       - name: Configure signing
-        if: ${{ secrets.KEYSTORE_B64 != '' }}
         env:
           KEYSTORE_B64: ${{ secrets.KEYSTORE_B64 }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
+          if [ -z "$KEYSTORE_B64" ]; then
+            echo "No signing secrets configured — APK will be debug-signed."
+            exit 0
+          fi
           printf '%s' "$KEYSTORE_B64" | base64 -d > release.keystore
           {
             echo "storeFile=release.keystore"
